@@ -7,6 +7,6 @@ def get_filename():
   file_names = []
   soup = BeautifulSoup(requests.get(url).text, 'html.parser')
   for i in soup.find_all('a'):
-    file_name = f"{url}{i.get('href')}"
+    file_name = f"{url}/{i.get('href')}"
     file_names.append(file_name)
   return file_names[10]
